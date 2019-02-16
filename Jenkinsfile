@@ -19,7 +19,7 @@ pipeline {
                     sh "pwd"
 
                     ansiColor('xterm') {
-                        ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'hosts', playbook: 'playbook.yml')
+                        ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'hosts', playbook: 'playbook.yml', extras: '-vvv')
                     }
 
                 }
