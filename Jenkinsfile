@@ -18,7 +18,9 @@ pipeline {
                 dir("deployment") {
                     sh "pwd"
 
-                    ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'hosts', playbook: 'playbook.yml')
+                    ansiColor('xterm') {
+                        ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'hosts', playbook: 'playbook.yml')
+                    }
 
                 }
             }
