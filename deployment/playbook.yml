@@ -1,0 +1,10 @@
+---
+- hosts: server
+
+  tasks:
+  - name: test connection
+    ping:
+
+  - name: test jenkins environment
+    debug: msg="{{ lookup('env','BUILD_TAG') }}"
+

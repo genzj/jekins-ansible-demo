@@ -14,6 +14,13 @@ pipeline {
        stage("Deployment") {
             steps {
                 echo "deployment..."
+
+                dir("deployment") {
+                    sh "pwd"
+
+                    ansiblePlaybook(credentialsId: 'ansible_private_key', inventory: 'hosts', playbook: 'playbook.yml')
+
+                }
             }
        }
     }
