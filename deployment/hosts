@@ -1,5 +1,5 @@
-[defaults]
-host_key_checking=no
+[all:vars]
+ansible_ssh_common_args = '-o StrictHostKeyChecking=no'
 
 
 [server]
